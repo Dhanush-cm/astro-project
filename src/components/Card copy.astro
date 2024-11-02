@@ -1,0 +1,9 @@
+---
+const { text, author, role } = Astro.props;
+---
+<div style="background: #fff; padding: 1rem; margin: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; width: 90%; max-width: 300px;">
+  <img src="https://dummyimage.com/50x50/000/fff.png&text=G2" alt="G2 Logo" style="float: left; margin-right: 10px; border-radius: 50%;">
+  <h3 style="margin: 0; color: #333;">{text}</h3>
+  <p style="margin: 0.5rem 0 0; color: #666;"><strong>{author}</strong></p>
+  <p style="margin: 0; color: #999;">{role}</p>
+</div>
