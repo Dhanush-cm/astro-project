@@ -1,0 +1,77 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
+
+// Define card data for each column.
+const leftSideCards = [
+  { text: 'Excellent data on the security of us and our partners', author: 'Verified User in Entertainment', role: 'Mid-Market' },
+  { text: 'Impactful tool for vendor risk management', author: 'Verified User in Finance', role: 'Mid-Market' },
+  { text: 'Easy to understand actionable information', author: 'Verified User in Real Estate', role: 'Mid-Market' },
+];
+
+const rightSideCards = [
+  { text: 'Great service with lots of features', author: 'Verified User in Real Estate', role: 'Mid-Market' },
+  { text: 'Instant overview with detailed reports', author: 'Rodrigo H. R.', role: 'Enterprise' },
+  { text: 'Highly responsive customer support', author: 'Zack S. Vice President of Security Operations', role: 'Mid-Market' },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpGuard Testimonials</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e7ff;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem;
+      }
+      .left-section, .right-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow: hidden;
+        height: 500px;
+      }
+      .left-section {
+        animation: scrollDown 15s linear infinite;
+      }
+      .right-section {
+        animation: scrollUp 15s linear infinite;
+      }
+      /* Scroll down animation for the left column */
+      @keyframes scrollDown {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      /* Scroll up animation for the right column */
+      @keyframes scrollUp {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(-100%); }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="container">
+      <div class="left-section">
+        {leftSideCards.map(card => (
+          <Card {...card} />
+        ))}
+      </div>
+      <div class="right-section">
+        {rightSideCards.map(card => (
+          <Card {...card} />
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
