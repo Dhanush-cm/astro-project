@@ -1,8 +1,10 @@
----
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
+  text?: string;
+  author?: string;
+  role?: string;
 }
 
 const { href, title, body } = Astro.props;
